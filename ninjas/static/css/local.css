@@ -1,0 +1,15 @@
+/******** CSS ******/
+
+body {
+	background: gray;
+
+}
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+a {
+	display:  block;
+
+}
