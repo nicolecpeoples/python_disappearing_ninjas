@@ -6,25 +6,13 @@ app.secret_key = "thisismysecretkey"
 def index():
 	return render_template('index.html')
 
-@app.route('/ninjas')
-def allninjas():
-	return render_template('ninjas.html')
+@app.route('/ninja')
+def ninjaPage():
+	return render_template('ninjas.html' , pagename='all-turtles')
+@app.route('/ninja/<pagename>')
+def showChosenNinja(pagename):
+	return render_template('ninjas.html', pagename=pagename)
 
-@app.route('/ninja/orange')
-def orangeNinja():
-	return render_template('orange.html')
-
-@app.route('/ninja/purple')
-def purpleNinja():
-		return render_template('purple.html')
-
-@app.route('/ninja/blue')
-def blueNinja():
-	return render_template('blue.html')
-
-@app.route('/ninja/red')
-def redninja():
-		return render_template('red.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
